@@ -13,15 +13,15 @@ class Tree {
     }
 
     add(id, value) {
-        var root = this.root;
+        let root = this.root;
 
         if(root == null) {
             this.root = new Node(id, value);
             return;
         }
 
-        var currentNode = root;
-        var newNode = new Node(id, value);
+        let currentNode = root;
+        let newNode = new Node(id, value);
 
         while(currentNode){
             if(id < currentNode.id) {
@@ -46,17 +46,17 @@ class Tree {
     }
 
     find() {
-        var nodes = this.traverse(this.root);
+        let nodes = this.traverse(this.root);
         
         for(var i = 0; i < nodes.length; i++) {
-            var path = this.getPath(nodes[i]);
+            let path = this.getPath(nodes[i]);
             console.log('ID: ' + nodes[i].id + '  Value: ' + nodes[i].value + '  ' + path);
         }
     }
 
     getPath(node) {
-        var current = this.root;
-        var path = 'Path: ';
+        let current = this.root;
+        let path = 'Path: ';
 
         while(current.id != node.id) {
             path += current.id + ' -> ';
@@ -73,7 +73,7 @@ class Tree {
     }
 
     traverse(node) {
-        var nodes = new Array();
+        let nodes = new Array();
 
         if(node) {
             nodes = nodes.concat(this.traverse(node.left));
@@ -85,4 +85,4 @@ class Tree {
     }
 }
 
-export default Tree;
+module.exports = Tree;

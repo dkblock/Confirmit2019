@@ -1,11 +1,11 @@
-import Tree from './tree.js';
+const Tree = require('./tree.js');
 
 var tree = new Tree();
 var n = 50;
 
 for (var i = 0; i < n; i++) {
-    var randomId = getRandomInt(0,10000);
-    var randomValue = getRandomInt(0,10000);
+    let randomId = getRandomInt(999, 10000);
+    let randomValue = getRandomInt(999, 10000);
     tree.add(randomId, randomValue);
 }
 
