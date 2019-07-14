@@ -45,12 +45,14 @@ class Tree {
         }
     }
 
-    find() {
+    find(func) {
         let nodes = this.traverse(this.root);
-        
+
         for(var i = 0; i < nodes.length; i++) {
-            let path = this.getPath(nodes[i]);
-            console.log('ID: ' + nodes[i].id + '  Value: ' + nodes[i].value + '  ' + path);
+            if(func(nodes[i])) {
+                let path = this.getPath(nodes[i]);
+                console.log('ID: ' + nodes[i].id + '  Value: ' + nodes[i].value + '  ' + path);
+            }
         }
     }
 

@@ -9,7 +9,7 @@ for (var i = 0; i < n; i++) {
     tree.add(randomId, randomValue);
 }
 
-tree.find();
+tree.find(x => x.id > 8000 && x.value < 5000);
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;

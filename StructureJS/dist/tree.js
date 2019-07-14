@@ -53,12 +53,14 @@ var Tree = function () {
         }
     }, {
         key: 'find',
-        value: function find() {
+        value: function find(func) {
             var nodes = this.traverse(this.root);
 
             for (var i = 0; i < nodes.length; i++) {
-                var path = this.getPath(nodes[i]);
-                console.log('ID: ' + nodes[i].id + '  Value: ' + nodes[i].value + '  ' + path);
+                if (func(nodes[i])) {
+                    var path = this.getPath(nodes[i]);
+                    console.log('ID: ' + nodes[i].id + '  Value: ' + nodes[i].value + '  ' + path);
+                }
             }
         }
     }, {
