@@ -1,8 +1,12 @@
 'use strict';
 
-var Tree = require('./tree.js');
+var _tree = require('tree.js');
 
-var tree = new Tree();
+var _tree2 = _interopRequireDefault(_tree);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var tree = new _tree2.default();
 var n = 50;
 
 for (var i = 0; i < n; i++) {
