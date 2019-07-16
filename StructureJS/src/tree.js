@@ -13,9 +13,9 @@ class Tree {
     }
 
     add(id, value) {
-        let root = this.root;
+        const root = this.root;
 
-        if(root == null) {
+        if(root === null) {
             this.root = new Node(id, value);
             return;
         }
@@ -45,15 +45,24 @@ class Tree {
         }
     }
 
-    find(func) {
-        let nodes = this.traverse(this.root);
+    searchByFunc(func) {
+        return this.traverseByFunc(this.root, func);
+    }    
 
-        for(var i = 0; i < nodes.length; i++) {
-            if(func(nodes[i])) {
-                let path = this.getPath(nodes[i]);
-                console.log('ID: ' + nodes[i].id + '  Value: ' + nodes[i].value + '  ' + path);
+    traverseByFunc(node, func) {
+        let nodes = new Array();
+
+        if(node) {
+            nodes.push.apply(nodes, this.traverseByFunc(node.left, func));
+
+            if(func(node)) {
+                nodes.push(node);
             }
+            
+            nodes.push.apply(nodes, this.traverseByFunc(node.right, func));
         }
+
+        return nodes;
     }
 
     getPath(node) {
@@ -72,18 +81,6 @@ class Tree {
         }
 
         return path + '[' + node.id + ']';
-    }
-
-    traverse(node) {
-        let nodes = new Array();
-
-        if(node) {
-            nodes = nodes.concat(this.traverse(node.left));
-            nodes.push(node);
-            nodes = nodes.concat(this.traverse(node.right));
-        }
-
-        return nodes;
     }
 }
 

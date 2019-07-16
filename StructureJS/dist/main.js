@@ -1,12 +1,7 @@
 'use strict';
 
-var _tree = require('tree.js');
-
-var _tree2 = _interopRequireDefault(_tree);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var tree = new _tree2.default();
+var Tree = require('./tree.js');
+var tree = new Tree();
 var n = 50;
 
 for (var i = 0; i < n; i++) {
@@ -15,9 +10,14 @@ for (var i = 0; i < n; i++) {
     tree.add(randomId, randomValue);
 }
 
-tree.find(function (x) {
-    return x.id > 8000 && x.value < 5000;
+var nodes = tree.searchByFunc(function (x) {
+    return x.id > 5000 && x.value < 3000;
 });
+
+for (var i = 0; i < nodes.length; i++) {
+    var path = tree.getPath(nodes[i]);
+    console.log('ID: ' + nodes[i].id + '  Value: ' + nodes[i].value + '  ' + path);
+}
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
