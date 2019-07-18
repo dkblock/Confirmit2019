@@ -84,4 +84,4 @@ class Tree {
     }
 }
 
-module.exports = Tree;
+export {Tree};

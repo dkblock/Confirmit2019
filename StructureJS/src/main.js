@@ -1,4 +1,4 @@
-const Tree = require('./tree.js');
+import {Tree} from './tree';
 const tree = new Tree();
 const n = 50;
 

@@ -1,7 +1,8 @@
 'use strict';
 
-var Tree = require('./tree.js');
-var tree = new Tree();
+var _tree = require('./tree');
+
+var tree = new _tree.Tree();
 var n = 50;
 
 for (var i = 0; i < n; i++) {
@@ -11,7 +12,7 @@ for (var i = 0; i < n; i++) {
 }
 
 var nodes = tree.searchByFunc(function (x) {
-    return x.id > 5000 && x.value < 3000;
+    return x.id > 8000 && x.value < 2000;
 });
 
 for (var i = 0; i < nodes.length; i++) {
