@@ -17,7 +17,7 @@ var nodes = tree.searchByFunc(function (x) {
 
 for (var i = 0; i < nodes.length; i++) {
     var path = tree.getPath(nodes[i]);
-    console.log('ID: ' + nodes[i].id + '  Value: ' + nodes[i].value + '  ' + path);
+    console.log(' ID: ' + nodes[i].id + '  Value: ' + nodes[i].value + '  ' + path);
 }
 
 function getRandomInt(min, max) {
