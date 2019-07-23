@@ -12,7 +12,7 @@ let nodes = tree.searchByFunc(x => x.id > 8000 && x.value < 2000);
 
 for(var i = 0; i < nodes.length; i++) {
     let path = tree.getPath(nodes[i]);
-    console.log('ID: ' + nodes[i].id + '  Value: ' + nodes[i].value + '  ' + path);
+    console.log(`ID: ${nodes[i].id}  Value: ${nodes[i].value}  ${path}`);
 }
 
 function getRandomInt(min, max) {

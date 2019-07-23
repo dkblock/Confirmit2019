@@ -1,6 +1,6 @@
 const Octokit = require('@octokit/rest');
 const octokit = new Octokit({
-    auth: '05d03cc94c69fd282c377d57f50dbdc5f81d5574 '
+    auth: '05d03cc94c69fd282c377d57f50dbdc5f81d5574'
   });
 const user = 'dkblock';
 
