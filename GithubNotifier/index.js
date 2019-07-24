@@ -1,15 +1,16 @@
-const Octokit = require('@octokit/rest');
-const octokit = new Octokit({
-    auth: '9374c26e0fa95110ff910d7958ed1481f386e649'
-  });
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const request = new XMLHttpRequest();
 const user = 'dkblock';
+const repo = 'confirmit2019';
+const url = `https://api.github.com/repos/${user}/${repo}/commits/master`
 
-octokit.repos.listForUser({
-    username: user
-  }).then(({data}) => {
-      console.log(`List of ${user}'s repositories:`)
+request.open("GET", url, false);
+request.send();
 
-      for (let i = 0; i < data.length; i++) {
-          console.log(`${i+1}. ${data[i].name}`);          
-      }
-  });
+let data = JSON.parse(request.responseText);
+
+console.log(`Latest commit from ${data.committer.login}:`);
+console.log(` Message: "${data.commit.message}"`);
+console.log(` URL: ${data.html_url}`);
+
+
