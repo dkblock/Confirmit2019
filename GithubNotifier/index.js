@@ -1,16 +1,9 @@
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const request = new XMLHttpRequest();
+require('dotenv').config();
+
 const user = 'dkblock';
-const repo = 'confirmit2019';
-const url = `https://api.github.com/repos/${user}/${repo}/commits/master`
+const repo = 'Confirmit2019';
+const getInfoOfLatestCommit = require('./github.js');
+const sendMessage = require('./slack.js');
 
-request.open("GET", url, false);
-request.send();
-
-let data = JSON.parse(request.responseText);
-
-console.log(`Latest commit from ${data.committer.login}:`);
-console.log(` Message: "${data.commit.message}"`);
-console.log(` URL: ${data.html_url}`);
-
-
+const data = getInfoOfLatestCommit(user, repo);
+sendMessage(data, repo);
