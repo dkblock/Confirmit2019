@@ -1,4 +1,4 @@
-function getInfoOfLatestCommit(user, repo) {
+export default function getInfoOfLatestCommit(user, repo) {
     const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
     const request = new XMLHttpRequest();
     const url = `https://api.github.com/repos/${user}/${repo}/commits/master`
@@ -8,5 +8,3 @@ function getInfoOfLatestCommit(user, repo) {
 
     return JSON.parse(request.responseText);
 }
-
-module.exports = getInfoOfLatestCommit;

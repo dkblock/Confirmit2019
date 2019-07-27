@@ -1,9 +1,6 @@
 require('dotenv').config();
+require("@babel/register")({
+    presets: ["@babel/preset-env"]
+});
 
-const user = 'dkblock';
-const repo = 'Confirmit2019';
-const getInfoOfLatestCommit = require('./github.js');
-const sendMessage = require('./slack.js');
-
-const data = getInfoOfLatestCommit(user, repo);
-sendMessage(data, repo);
+require('./main.js');
