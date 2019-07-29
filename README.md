@@ -3,7 +3,7 @@
 
 ## GithubNotifier
 
-Create file **.env** with next params:
+Create file **.env** that includes next strings:
 ```javascript
 GIT_USER = USER_WHOSE_REPOSITORIES_WILL_BE_CHECKED
 
