@@ -1,8 +1,9 @@
-import getInfoOfLatestCommit from './githubWorker';
-import sendMessage from './slackWorker';
+import checkLatestCommit from './commitChecker';
+import {config} from './config/config';
 
-const user = process.env.GIT_USER;
-const repo = process.env.GIT_REPO;
-const data = getInfoOfLatestCommit(user, repo);
+const repositories = config.github.repositories;
+const interval = config.interval;
 
-sendMessage(data);
+repositories.forEach(repository => {
+    setInterval(checkLatestCommit, interval, repository);
+});

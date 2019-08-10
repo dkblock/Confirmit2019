@@ -1,0 +1,23 @@
+{
+    "github": {
+        "user": "dkblock",
+        "repositories": [
+            "GithubNotifier", 
+            "Personal",
+            "YarTransport",
+            "TreesComparer",
+            "Confirmit2019"
+        ],
+        "clientID": "55cdf4b91cf73eb04c4e",
+        "clientSecret": "0332438687638c2946f70498c40106f670538445"
+    },
+    "slack": {
+        "token": "xoxb-699769002945-696024412450-6wsR7Fm7RBdxA2bcrOTdir7p",
+        "channel": "CLRJUCP0U"
+    },
+    "vk": {
+        "userID": "217201937",
+        "groupID": "185152574",
+        "token": "a1cdf3d101160162e2a6d98fc2039b71f5a23de428f20a267e80e70f4b1818aaa587917135462396ba562"
+    }
+}
