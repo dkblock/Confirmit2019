@@ -1,6 +1,5 @@
 # Confirmit2019
 
-
 ## GithubNotifier
 
 ### Prepare for using
